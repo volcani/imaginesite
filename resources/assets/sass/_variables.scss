@@ -1,0 +1,108 @@
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// COMP_hack Color Scheme
+$comp-green: #28a745 !default;
+
+// Body
+//$body-bg: #f5f8fa;
+$body-bg: $black;
+$body-color: $comp-green;
+
+$border-width: 1px;
+$border-color: rgba($white, .250);
+
+$card-border-color: $border-color;
+$card-cap-bg:       rgba($white, .125);
+$card-bg:           $gray-900;
+
+$navbar-dark-color:                 $comp-green;
+$navbar-dark-hover-color:           lighten($comp-green, 25%);
+$navbar-dark-active-color:          $comp-green;
+$navbar-dark-disabled-color:        darken($comp-green, 15%);
+//$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:  $white;
+$yiq-text-light: $black;
+
+// Typography
+//$font-family-sans-serif: 'Raleway', sans-serif;
+//$font-family-sans-serif: "Kurale", serif;
+$headings-font-family: 'Playfair Display', serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-monospace: 'Source Code Pro', monospace;
+$font-size-base: 0.9rem;
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+// These are the defaults but this is also matching the custom fonts.
+$font-weight-light:  300;
+$font-weight-normal: 400;
+$font-weight-bold:   700;
+
+$line-height-base: 1.6;
+
+$theme-colors: (
+  "primary": $comp-green,
+  /*"secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark*/
+);
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $comp-green;//theme-color("primary");
+$link-hover-color:          lighten($link-color, 15%);
+
+/*
+$dropdown-bg:                       $white !default;
+$dropdown-border-color:             rgba($black, .15) !default;
+$dropdown-border-radius:            $border-radius !default;
+$dropdown-border-width:             $border-width !default;
+$dropdown-divider-bg:               $gray-200 !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+
+$dropdown-link-color:               $gray-900 !default;
+$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
+$dropdown-link-hover-bg:            $gray-100 !default;
+
+$dropdown-link-active-color:        $component-active-color !default;
+$dropdown-link-active-bg:           $component-active-bg !default;
+
+$dropdown-link-disabled-color:      $gray-600 !default;
+*/
+
+$component-active-color:      $white !default;
+$component-active-bg:         $comp-green;//theme-color("primary") !default;
+
+
+$dropdown-link-color:               $link-color;
+$dropdown-link-hover-color:         darken($link-color, 15%);
+$dropdown-bg:                       $gray-700;
+$dropdown-link-hover-bg:            $gray-500;
+$dropdown-border-color:             $gray-600;
+$dropdown-header-color:             $gray-300;
+
+$input-bg:                              $gray-800;
+$input-disabled-bg:                     $gray-900;
+
+$input-color:                           $comp-green;
+$input-border-color:                    $border-color;
+
+$navbar-brand-font-size: ($font-size-base * 2);
