@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55aa385461ce0a493f1bf81256b9e2c0",
-    "content-hash": "b47796ff35d468a116f428cc5faf1bac",
+    "hash": "2744f02bb821018e73e127a19e2ef8fe",
+    "content-hash": "42e2228f0e9b65a368b609b73b6bddc6",
     "packages": [
         {
             "name": "comp_hack/phpapi",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/comphack/phpapi.git",
-                "reference": "963301a81c2e3ca6375fb3f0614287261a42b7b1"
+                "reference": "2d12b645a59f955781e5cdadd8169a5103298056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/comphack/phpapi/zipball/963301a81c2e3ca6375fb3f0614287261a42b7b1",
-                "reference": "963301a81c2e3ca6375fb3f0614287261a42b7b1",
+                "url": "https://api.github.com/repos/comphack/phpapi/zipball/2d12b645a59f955781e5cdadd8169a5103298056",
+                "reference": "2d12b645a59f955781e5cdadd8169a5103298056",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "imagine",
                 "smt"
             ],
-            "time": "2018-04-21 13:26:31"
+            "time": "2018-04-28 22:15:05"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -4305,7 +4305,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "comp_hack/phpapi": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
