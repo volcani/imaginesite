@@ -61,8 +61,7 @@ class WebAuthController extends Controller
         }
         else if(1 == request('login'))
         {
-            $api = new API(env('COMP_API', 'http://127.0.0.1:10999/api'),
-                $username);
+            $api = new API(config('comphack.api'), $username);
 
             if(false === $api->Authenticate($password))
             {

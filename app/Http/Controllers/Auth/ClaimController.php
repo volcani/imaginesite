@@ -106,8 +106,7 @@ class ClaimController extends Controller
             ]);
         }
 
-        $api = new ServerAPI(env('COMP_API', 'http://127.0.0.1:10999/api'),
-            $data['username']);
+        $api = new ServerAPI(config('comphack.api'), $data['username']);
         $resp = $api->Authenticate($data['password']);
 
         if(false === $resp)

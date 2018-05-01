@@ -15,7 +15,6 @@ class Controller extends BaseController
 
     protected function api()
     {
-        return ServerAPI::Session(env('COMP_API',
-            'http://127.0.0.1:10999/api'));
+        return ServerAPI::Session(config('comphack.api'));
     }
 }

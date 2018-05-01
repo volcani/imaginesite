@@ -67,8 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $api = new API(env('COMP_API', 'http://127.0.0.1:10999/api'),
-            $data['username']);
+        $api = new API(config('comphack.api'), $data['username']);
         $resp = $api->Register($data['username'], $data['email'],
             $data['password']);
 

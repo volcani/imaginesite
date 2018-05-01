@@ -51,8 +51,7 @@ class LoginController extends Controller
     {
         $creds = $this->credentials($request);
 
-        $api = new ServerAPI(env('COMP_API', 'http://127.0.0.1:10999/api'),
-            $creds['username']);
+        $api = new ServerAPI(config('comphack.api'), $creds['username']);
         $api->Authenticate($creds['password']);
     }
 
