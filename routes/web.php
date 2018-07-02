@@ -30,3 +30,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/webauth', 'Auth\WebAuthController@index');
 Route::post('/webauth', 'Auth\WebAuthController@login');
+
+Route::get('/accountmanager', 'AccountControl\AdminManagerController@index');
+
+Route::post('/delete/{username}', 'AccountControl\AdminManagerController@delete');
+Route::post('/update', 'AccountControl\AdminManagerController@update');
