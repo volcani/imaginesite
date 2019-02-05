@@ -112,7 +112,7 @@ class AdminManagerController extends Controller
         return $response->error;
       }
       if(array_key_exists('user_level', $sendArray)) {
-        $user->update(['admin' => (1000 >= $sendArray['user_level']) ? true : false]);
+        $user->update(['admin' => (1000 <= (int)$sendArray['user_level']) ? true : false]);
         return $response->error;
       }
 
