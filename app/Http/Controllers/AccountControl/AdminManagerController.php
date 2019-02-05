@@ -99,6 +99,7 @@ class AdminManagerController extends Controller
       {
         return 'Bad API Response';
       }
+
       $user = User::where('username', $username)->first();
 
       if(array_key_exists('disp_name', $sendArray))
@@ -108,12 +109,16 @@ class AdminManagerController extends Controller
       if(array_key_exists('password', $sendArray))
       {
         $user->update(['password' => Hash::make($sendArray['password'])]);
-        $user->update(['server_hash' => 'changed by admin']);
-        return $response->error;
+
+        $user_api = new \comp_hack\API(config('comphack.api'), $username);
+
+        if($user_api->Authenticate($sendArray['password']))
+        {
+          $user->update(['server_hash' => $user_api->GetPasswordHash()]);
+        }
       }
       if(array_key_exists('user_level', $sendArray)) {
-        $user->update(['admin' => (1000 <= (int)$sendArray['user_level']) ? true : false]);
-        return $response->error;
+        $user->update(['admin' => (1000 <= $sendArray['user_level'] ? true : false)]);
       }
 
       return 'success';
