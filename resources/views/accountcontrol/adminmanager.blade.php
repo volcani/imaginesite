@@ -7,6 +7,7 @@
         <div class="card">
           <div class="card-header">Account Manager</div>
           <div class="card-body">
+            <!--
             <form method="get">
               <div class="form-group row">
                 <label for="account-search" class="col-md-8  offset-md-1">Account Search</label>
@@ -17,6 +18,7 @@
               </div>
             </form>
             <hr>
+            -->
             <table class="table table-bordered table-comp">
               <thead>
                 <tr class="text-md-center">
@@ -25,6 +27,7 @@
                   <th>Email</th>
                   <th>Ticket Count</th>
                   <th>User Level</th>
+                  <th>CP</th>
                   <th>Enabled</th>
                   <th>Last Login</th>
                   <th>Edit</th>

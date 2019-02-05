@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.$ = require('jquery');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -53,6 +54,7 @@ $($(document).ready(function() {
     })
     .always(function() {
       console.log("complete");
+      location.reload();
     });
   });
 
@@ -76,6 +78,7 @@ $($(document).ready(function() {
     })
     .always(function() {
       console.log("complete");
+      location.reload();
     });
 
     $target.closest('tr').prev('tr').remove();

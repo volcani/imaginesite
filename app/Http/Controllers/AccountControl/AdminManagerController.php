@@ -10,13 +10,23 @@ use comp_hack\API as TempApi;
 
 class AdminManagerController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
       $api = $this->api();
       $users = $api->GetAccounts();
 
       if($users === false) {
-        return view('accessdenied');
+        return redirect()->route('login');
       }
 
       return view('accountcontrol.adminmanager', compact('users'));
@@ -77,6 +87,10 @@ class AdminManagerController extends Controller
 
       if(array_key_exists('cp', $sendArray)) {
         $sendArray['cp'] = (int)$sendArray['cp'];
+      }
+
+      if(array_key_exists('ticket_count', $sendArray)) {
+        $sendArray['ticket_count'] = (int)$sendArray['ticket_count'];
       }
 
       $api = $this->api();

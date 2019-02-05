@@ -1,22 +1,27 @@
-<tr class="text-md-center" id="{{$user->username}}">
+<?php
+
+use Carbon\Carbon;
+
+?><tr class="text-md-center" id="{{$user->username}}">
   <td>{{$user->username}}</td>
   <td>{{$user->displayName}}</td>
   <td>{{$user->email}}</td>
   <td>{{$user->ticketCount}}</td>
   <td>{{$user->userLevel}}</td>
-  <td>{{$user->enabled ? 'true' : 'false'}}</td>
-  <td>{{$user->lastLogin}}</td>
+  <td>{{$user->cp}}</td>
+  <td>{{$user->enabled ? 'Enabled' : 'Disabled'}}</td>
+  <td>{{Carbon::createFromTimestampUTC($user->lastLogin)->format('m/d/Y')}}</td>
   <td>
     <button type="button" class="btn btn-primary editBtn">Edit</button>
   </td>
 </tr>
 <tr class="editTr">
-  <td colspan="8" class="">
+  <td colspan="9" class="">
     <form id="{{$user->username}}">
       <div class="form-group row">
         <div class="form-group row col-md-4">
           <label for="disp_name" class="col-md-6 col-form-label text-md-right">Display Name</label>
-          <input type="text" name="disp_name" class="form-control col-md-6" />
+          <input type="text" name="disp_name" class="form-control col-md-6" value="{{$user->displayName}}" />
         </div>
         <div class="form-group row col-md-4">
           <label for="password" class="col-md-6 col-form-label text-md-right">Password</label>
@@ -24,24 +29,24 @@
         </div>
         <div class="form-group row col-md-4">
           <label for="cp" class="col-md-6 col-form-label text-md-right">CP</label>
-          <input type="text" name="cp" class="form-control col-md-6" />
+          <input type="text" name="cp" class="form-control col-md-6" value="{{$user->cp}}" />
         </div>
         <div class="form-group row col-md-4">
           <label for="ticket_count" class="col-md-6 col-form-label text-md-right">Ticket Count</label>
-          <input type="text" name="ticket_count" class="form-control col-md-6" />
+          <input type="text" name="ticket_count" class="form-control col-md-6" value="{{$user->ticketCount}}" />
         </div>
         <div class="form-group row col-md-4">
           <label for="user_level" class="col-md-6 col-form-label text-md-right">User Level</label>
-          <input type="text" name="user_level" class="form-control col-md-6" />
+          <input type="text" name="user_level" class="form-control col-md-6" value="{{$user->userLevel}}" />
         </div>
         <div class="form-group row col-md-4">
           <div class="col-md-6 offset-md-5">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-primary active editRadio">
-                  <input type="radio" name="enabled" value="enabled" checked>Enabled</input>
+              <label class="btn btn-primary editRadio {{$user->enabled ? 'active' : ''}}">
+                  <input type="radio" name="enabled" value="enabled" {{$user->enabled ? 'checked' : ''}}>Enabled</input>
                 </label>
-              <label class="btn btn-primary editRadio">
-                  <input type="radio" name="enabled" value="disabled">Disabled</input>
+              <label class="btn btn-primary editRadio {{$user->enabled ? '' : 'active'}}">
+                  <input type="radio" name="enabled" value="disabled" {{$user->enabled ? '' : 'checked'}}>Disabled</input>
                 </label>
             </div>
           </div>
